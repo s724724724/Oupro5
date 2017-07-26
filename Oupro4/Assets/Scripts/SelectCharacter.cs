@@ -7,17 +7,18 @@ public class SelectCharacter : MonoBehaviour
     //初期に設定したステータスをそのまま別のクラスで使用できるようにしておく。
     //ここで設定した値は最低の数
     public static int VIT;
-    public static int POW;
     public static int DEX;
+    public static int POW;
     public static int LUK;
     public static int Card;
     public static bool selected = false;
+
     public void SelectStatus()
     {
         int rnum;
         VIT = 5;
-        POW = 5;
         DEX = 5;
+        POW = 5;
         LUK = 5;
         //残りポイント数
         int point = 20;
@@ -25,8 +26,8 @@ public class SelectCharacter : MonoBehaviour
 
         //ステータスを割り振ったかどうかの確認
         bool vitc = false;
-        bool powc = false;
         bool dexc = false;
+        bool powc = false;
         bool lukc = false;
 
         //全てのステータスが割り振られるまで繰り返す
@@ -46,6 +47,18 @@ public class SelectCharacter : MonoBehaviour
                     break;
 
                 case 2:
+                    if (dexc == false)
+                    {
+                        count--;
+                        rnum = Random.Range(1, point - count + 1);
+                        DEX = DEX + rnum;
+                        point = point - rnum;
+                        dexc = true;
+                        //Debug.Log(DEX);
+                    }
+                    break;
+
+                case 3:
                     if (powc == false)
                     {
                         count--;
@@ -54,18 +67,6 @@ public class SelectCharacter : MonoBehaviour
                         point = point - rnum;
                         powc = true;
                         //Debug.Log(POW);
-                    }
-                    break;
-
-                case 3:
-                    if (dexc == false)
-                    {
-                        count--;
-                        rnum = Random.Range(1, point - count+ 1);
-                        DEX = DEX + rnum;
-                        point = point - rnum;
-                        dexc = true;
-                        //Debug.Log(DEX);
                     }
                     break;
 
@@ -85,16 +86,21 @@ public class SelectCharacter : MonoBehaviour
 
         //一番高い値を保存する（カードを選ぶため）
         Card = 1;
-        if (VIT < DEX)
+        int max = VIT;
+
+        if (max < DEX)
         {
+            max = DEX;
             Card = 2;
         }
-        if (DEX < POW)
+        if (max < POW)
         {
+            max = POW;
             Card = 3;
         }
-        if (POW < LUK)
+        if (max < LUK)
         {
+            max = LUK;
             Card = 4;
         }
 

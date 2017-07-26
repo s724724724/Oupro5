@@ -38,11 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 9
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 8
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -156,20 +156,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -317,7 +303,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 230}
-  m_SizeDelta: {x: 300, y: 32}
+  m_SizeDelta: {x: 600, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631610693
 MonoBehaviour:
@@ -503,7 +489,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19659053, g: 0.19074394, b: 0.3602941, a: 0}
+  m_BackGroundColor: {r: 0.19659053, g: 0.19607843, b: 0.39215687, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -611,7 +597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "VIT\t:\nPOW:\nDEX\t:\nLUK\t:"
+  m_Text: "VIT\t:\nDEX\t:\nPOW:\nLUK\t:"
 --- !u!222 &1207700809
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -629,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e2ee7a515129c47b94177f30670415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Message: {fileID: 0}
+  message: {fileID: 631610693}
 --- !u!1 &1474765045
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +629,8 @@ GameObject:
   - component: {fileID: 1474765048}
   - component: {fileID: 1474765047}
   - component: {fileID: 1474765051}
+  - component: {fileID: 1474765052}
+  - component: {fileID: 1474765053}
   m_Layer: 5
   m_Name: StatusValue
   m_TagString: StatusText
@@ -747,7 +735,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e2ee7a515129c47b94177f30670415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Message: {fileID: 0}
+  message: {fileID: 631610693}
+--- !u!114 &1474765052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474765045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de2fa62f25d6ec4985ee801d14e0332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1474765053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474765045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070b9db099d366847abd5b1af31ed189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620522421
 GameObject:
   m_ObjectHideFlags: 0

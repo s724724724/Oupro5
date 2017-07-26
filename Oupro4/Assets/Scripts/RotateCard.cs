@@ -6,7 +6,7 @@ public class RotateCard : MonoBehaviour {
     bool waiting = true;        //待機中かどうか確認
     bool selectedCard = false;  //カードが決定されたかどうかの確認
     bool lastRotate = false;
-    bool check = false;
+    public static bool check = false;
     float rotateSpeed = 3;
     float time;
 
